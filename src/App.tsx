@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+const commaNumber = require('comma-number');
+const commafy = commaNumber.bindWith(',', '.');
+
+type Props = {};
+type State = { fromInput: string; withCommas: string };
+
+class App extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = { fromInput: '', withCommas: '' };
+  }
+  inputChangeHandler = (e: React.FormEvent<HTMLInputElement>) => {
+    const rawInput = e.currentTarget.value;
+
+    let inputNumber = rawInput.split(',').join('');
+    console.log(inputNumber);
+    if (Number(inputNumber) || inputNumber === '') {
+      this.setState({ withCommas: commafy(e.currentTarget.value) });
+    }
+  };
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <input onChange={this.inputChangeHandler} />
+        <p>{this.state.withCommas}</p>
       </div>
     );
   }
