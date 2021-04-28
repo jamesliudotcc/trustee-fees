@@ -2342,10 +2342,10 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-comma-number@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/comma-number/-/comma-number-2.0.0.tgz#24dfa83ce958d68a9d21af48e20e52dc072704bd"
-  integrity sha1-JN+oPOlY1oqdIa9I4g5S3AcnBL0=
+comma-number@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/comma-number/-/comma-number-2.0.2.tgz#5746283419d47d3c8f33da485147587aa8411680"
+  integrity sha512-+0izevRLy+l+W07CbfYf2EsEtbApfvk62NLGHlPR9bWUv7rqDEmfqPOH1gAOBNsZb/6rcJLGXsw0JW4zaojjbg==
 
 commander@2.17.x, commander@~2.17.1:
   version "2.17.1"
